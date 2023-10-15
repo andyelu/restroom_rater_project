@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +27,33 @@ header {
   background-color: #000000;
 }
 
-.icons {
-  width: 60px;
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+#icons {
+  position: absolute;
+  z-index: 1000;
+}
+
+#map-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#leaderboard {
+  position: abosolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
 }
