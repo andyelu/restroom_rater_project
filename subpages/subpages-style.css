@@ -21,6 +21,7 @@ html {
 .home-button {
   transition: transform 0.2s;
   width: 70%;
+  max-width: 500px;
 }
 
 .home-button:hover {
