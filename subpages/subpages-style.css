@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
+
+body {
+    font-family: "Gabarito", sans-serif;
+  }
+
+html {
+    background-color: #f5f5f5;
+  }
+.front-text {
+  margin-top: 5%;
+  font-size: 45px;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
+  margin-top: 2vh;
+  margin-left: 2vh;
+}
+
+#image-button {
+  background: none;
+  border: none;
+}
+
+.home-button {
+  transition: transform 0.2s; 
+}
+
+.home-button:hover {
+  transform: scale(0.996); 
+}
+
+.home-button:active {
+  transform: scale(0.95); 
+}
+
