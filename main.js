@@ -12,3 +12,12 @@ function initMap() {
     keyboardShortcuts: false,
   });
 }
+
+
+function openReviewsPage() {
+  window.location.href = "subpages/reviews.html";
+}
+
+function openNearbyPage() {
+  window.location.href = "subpages/nearby.html";
+}
