@@ -7,18 +7,10 @@ body {
 html {
   background-color: #f5f5f5;
 }
+
 .front-text {
   margin-top: 5%;
   font-size: 45px;
-}
-
-.left-content {
-  display: flex;
-  flex-direction: left;
-  align-items: left;
-  justify-content: left;
-  margin-top: 2vh;
-  margin-left: 2vh;
 }
 
 #image-button {
@@ -28,6 +20,7 @@ html {
 
 .home-button {
   transition: transform 0.2s;
+  width: 70%;
 }
 
 .home-button:hover {
@@ -40,4 +33,13 @@ html {
 
 button#image-button img {
   cursor: pointer;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
+  margin-top: 2vh;
+  margin-left: 2vh;
 }
