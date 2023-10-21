@@ -141,7 +141,7 @@ html {
 @keyframes animate {
   0% {
     opacity: 1;
-    border-radius: 0;
+    border-radius: 25%;
     transform: translateY(0) rotate(0deg);
   }
 
@@ -198,7 +198,7 @@ html {
   left: 75%;
   width: 110px;
   height: 110px;
-  animation-delay: 3s;
+  animation-delay: 7s;
 }
 .circles div:nth-child(7) {
   left: 35%;
@@ -227,7 +227,27 @@ html {
   animation-delay: 0s;
   animation-duration: 22s;
 }
+.circles div:nth-child(10) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 6s;
+  animation-duration: 22s;
+}
+.circles div:nth-child(11) {
+  left: 24%;
+  width: 75px;
+  height: 75px;
+  animation-delay: 8s;
+  animation-duration: 22s;
+}
 
+.circles div:nth-child(12) {
+  left: 55%;
+  width: 90px;
+  height: 90px;
+  animation-duration: 24s;
+}
 @keyframes transitionIn {
   from {
     opacity: 0;

@@ -36,24 +36,6 @@ button#image-button img {
   cursor: pointer;
 }
 
-.centered-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 7vh;
-  text-align: center;
-  font-size: 20px;
-}
-
-.container {
-  height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: row;
-}
-
 .arr {
   position: relative;
   background: #202020;
@@ -80,6 +62,12 @@ button#image-button img {
   top: 23px;
 }
 
+.top-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
 .left {
   transform: rotate(-90deg);
 }
@@ -94,4 +82,43 @@ button#image-button img {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes transitionRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+h1 {
+  font-size: 120px;
+  padding-left: 20px;
+  animation: transitionRight 0.75s;
+}
+
+.top-list {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.top-image {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
 }
