@@ -2,6 +2,9 @@
 
 body {
   font-family: "Gabarito", sans-serif;
+  margin: 0;
+  padding: 0;
+  animation: transitionIn 0.75s;
 }
 
 html {
@@ -9,6 +12,8 @@ html {
 }
 
 #image-button {
+  width: 80px;
+  padding-top: 20px;
   background: none;
   border: none;
 }
@@ -19,9 +24,9 @@ html {
   max-width: 400px;
 }
 
-.home-button:hover {
+/* .home-button:hover {
   transform: scale(0.996);
-}
+} */
 
 .home-button:active {
   transform: scale(0.95);
@@ -39,4 +44,54 @@ button#image-button img {
   height: 7vh;
   text-align: center;
   font-size: 20px;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.arr {
+  position: relative;
+  background: #202020;
+  height: 60px;
+  width: 60px;
+  border-radius: 30%;
+  margin: 15px;
+  transition: 0.4s ease;
+}
+
+.arr:hover {
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.arr div {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-top: 4px solid #f5f5f5;
+  border-left: 4px solid #f5f5f5;
+  transform: rotate(45deg);
+  left: 17px;
+  top: 23px;
+}
+
+.left {
+  transform: rotate(-90deg);
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
