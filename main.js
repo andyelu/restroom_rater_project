@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 function initMap() {
