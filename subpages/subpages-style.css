@@ -98,17 +98,19 @@ button#image-button img {
 
 h1 {
   font-size: 120px;
-  padding-left: 20px;
+  padding-left: 50px;
   animation: transitionRight 0.75s;
+  margin-bottom: -5px;
 }
 
 .top-list {
   display: grid;
   align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 425px));
   grid-gap: 40px;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .top-image {
@@ -121,4 +123,117 @@ h1 {
   width: 100%;
   border-radius: 10px;
   display: block;
+  transition: transform 0.5s;
+}
+
+.no-go {
+  margin-bottom: 200px;
+}
+
+@media (max-width: 1020px) {
+  /* 2 columns x 500px + some buffer */
+  .top-list {
+    grid-template-columns: 1fr;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  h1 {
+    font-size: 60px;
+    padding-left: 15px;
+  }
+}
+
+.layer {
+  width: 100%;
+  height: 0%;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.good {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #86dc3d);
+}
+
+.bad {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+}
+
+.layer h3 {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.layer-text {
+  padding: 10px;
+  color: white;
+}
+
+.layer a {
+  margin-top: 20px;
+  color: #ff003f;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.top-image:hover img {
+  transform: scale(1.05);
+}
+
+.top-image:hover .layer {
+  height: 100%;
+}
+
+.svg-underline {
+  position: relative;
+  z-index: 10;
+  width: 16rem; /* Roughly equivalent to w-64 in frameworks like Tailwind */
+  padding-left: 40px;
+}
+
+@media (min-width: 1024px) {
+  /* Assuming this is a breakpoint similar to 'lg' */
+
+  #our-picks-underline {
+    width: 40%; /* Roughly lg:w-3/4 */
+  }
+
+  #our-no-gos-underline {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Assuming this is a breakpoint similar to 'lg' */
+
+  #our-picks-underline {
+    width: 70%; /* Roughly lg:w-3/4 */
+    padding-left: 15px;
+  }
+
+  #our-no-gos-underline {
+    width: 87%;
+    padding-left: 15px;
+  }
+}
+
+.svg-underline path {
+  stroke: black; /* Default color. You can change this to any color you like */
+  stroke-width: 4; /* Width of the stroke. Adjust as necessary */
 }
