@@ -237,3 +237,20 @@ h1 {
   stroke: black; /* Default color. You can change this to any color you like */
   stroke-width: 4; /* Width of the stroke. Adjust as necessary */
 }
+
+.map-container {
+  display: flex; /* Use flexbox to center-align */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh;
+}
+
+
+#map {
+  width: 100%;
+  max-width: 1600px;
+  height: 100%;
+  max-height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+}
