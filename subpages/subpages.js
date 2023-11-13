@@ -1,6 +1,4 @@
-require("dotenv").config();
-
-const apiKey = "ADD KEY HERE";
+const apiKey = "INSERT KEY HERE";
 
 function initMap() {
   if (!apiKey) {
@@ -30,15 +28,15 @@ function initMap() {
     const marker = new google.maps.Marker({
       position: { lat: location[0], lng: location[1] },
       map: map,
-      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-      title: 'Red Marker',
+      icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+      title: "Red Marker",
     });
   });
 }
 
 // Ensure the Google Maps API script is loaded
-if (typeof google === 'undefined') {
-  var script = document.createElement('script');
+if (typeof google === "undefined") {
+  var script = document.createElement("script");
   script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
   script.async = true;
   script.defer = true;
@@ -48,4 +46,6 @@ if (typeof google === 'undefined') {
     initMap();
   };
   document.head.appendChild(script);
+} else {
+  console.log("ERROR!");
 }
