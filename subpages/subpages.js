@@ -1,4 +1,4 @@
-const apiKey = "INSERT KEY HERE";
+const apiKey = "_REMOVED";
 
 function initMap() {
   if (!apiKey) {
@@ -7,7 +7,7 @@ function initMap() {
   }
 
   var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 19,
+    zoom: 18,
     center: { lat: 32.2319, lng: -110.9527 },
     mapTypeControl: false,
     streetViewControl: false,
