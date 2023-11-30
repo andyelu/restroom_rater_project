@@ -1,4 +1,4 @@
-const apiKey = "_REMOVED";
+const apiKey = process.env.MAP_KEY;
 
 function initMap() {
   if (!apiKey) {
