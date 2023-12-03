@@ -1,4 +1,4 @@
-const apiKey = "--Insert API Key Here--";
+const apiKey = "";
 
 function initMap() {
   if (!apiKey) {

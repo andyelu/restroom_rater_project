@@ -27,6 +27,11 @@ const getData = () => {
         const body = card.querySelector("[data-body]");
         header.textContent = restroom.name;
         body.textContent = restroom.location;
+
+        card.onclick = () => {
+          window.location.href = `review.html?id=${restroom.name}`;
+        };
+
         restroomCardContainer.append(card);
         return {
           name: restroom.name,
