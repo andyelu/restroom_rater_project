@@ -1,11 +1,14 @@
 const getBtn = document.getElementById("get-btn");
 
 const getData = () => {
-  console.log("test");
   axios
     .get("http://54.193.72.63:8080/api/v1/reviews")
     .then((response) => {
-      console.log(response);
+      const jsonData = response.data;
+      const myObject = jsonData[0];
+
+      console.log(myObject);
+      console.log(myObject.restroom_name);
     })
     .catch((err) => {
       console.error("Error fetching data:", err);
