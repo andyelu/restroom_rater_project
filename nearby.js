@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyDtB9nJjKODzGj_xbzec0IPZaZyKJdpcvw";
+const apiKey = "";
 
 function initMap() {
   if (!apiKey) {
