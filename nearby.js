@@ -1,4 +1,4 @@
-const apiKey = "(REMOVED FOR PUSH - PASTE KEY IN HERE)";
+const apiKey = "KEY HERE";
 
 function initMap() {
   if (!apiKey) {
@@ -30,7 +30,6 @@ function initMap() {
             const thisRestroom = {
               address: restroom.location,
               title: restroom.name,
-              directionsLink: restroom.directionsLink, // Add directionsLink property
             };
             locations.push(thisRestroom);
           }
@@ -47,11 +46,9 @@ function initMap() {
   getRestroomData().then((locations) => {
     locations.forEach((location) => {
       const marker = new google.maps.Marker({
-        position: location.address
-          ? undefined
-          : { lat: location.lat, lng: location.lng },
+        position: location.address ? undefined : { lat: location.lat, lng: location.lng },
         map: map,
-        icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+        icon: "/icons/pin.png",
         title: location.title,
       });
 
@@ -63,10 +60,9 @@ function initMap() {
             <p class="info-directions"><a href="https://www.google.com/maps?q=${location.address}" target="_blank">Get Directions</a></p>
           </div>
         `;
-      
+
         infoWindow.setContent(contentString);
         infoWindow.open(map, marker);
-    
       });
 
       if (location.address) {
