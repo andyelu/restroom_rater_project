@@ -1,3 +1,10 @@
+const reviewCardTemplate = document.querySelector("[data-review-template]");
+const reviewCardContainer = document.querySelector(
+  "[data-review-cards-container]"
+);
+
+let reviews = [];
+
 function getRestroomNameFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
   return decodeURIComponent(urlParams.get("id"));
@@ -19,25 +26,52 @@ const getReviews = () => {
     });
 };
 
-const logReview = () => {
-  getRating()
-    .then((reviewData) => {
-      console.log(reviewData.data); // Log the review data when it's available
-    })
-    .catch((err) => {
-      console.error(err); // Log any error that occurs during the request
-    });
+const displayRestroomName = () => {
+  const name = getRestroomNameFromUrl();
+  const nameContainer = document.getElementById("nameContainer");
+  nameContainer.textContent = name;
 };
 
-const logdeez = () => {
+const displayReviews = () => {
   getReviews()
-    .then((reviewData) => {
-      console.log(reviewData); // Log the review data when it's available
+    .then((response) => {
+      const jsonData = response;
+      reviews = jsonData.map((review) => {
+        const card = reviewCardTemplate.content.cloneNode(true).children[0];
+        const rating = card.querySelector("[data-rating]");
+        const comment = card.querySelector("[data-comment]");
+        const date = card.querySelector("[data-date]");
+        rating.textContent = review.rating;
+        comment.textContent = review.comment;
+        date.textContent = review.date_of_review;
+
+        reviewCardContainer.append(card);
+        return {
+          rating: review.rating,
+          comment: review.comment,
+          date: review.date_of_review,
+          element: card,
+        };
+      });
     })
     .catch((err) => {
-      console.error(err); // Log any error that occurs during the request
+      console.error("Error fetching data:", err);
     });
 };
 
-logReview();
-logdeez();
+const displayRating = () => {
+  getRating()
+    .then((res) => {
+      const ratingContainer = document.getElementById("ratingContainer");
+      ratingContainer.textContent = `${res.data}`;
+    })
+    .catch((err) => {
+      console.log(err);
+      const ratingContainer = document.getElementById("ratingContainer");
+      ratingContainer.textContent = "Error loading rating.";
+    });
+};
+
+displayRestroomName();
+displayRating();
+displayReviews();

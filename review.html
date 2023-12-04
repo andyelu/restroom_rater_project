@@ -8,5 +8,17 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div id="nameContainer"></div>
+    <div id="ratingContainer"></div>
+    <div id="reviewContainer"></div>
+    <div class="review-cards" data-review-cards-container></div>
+    <template data-review-template>
+      <div class="card">
+        <div class="rating" data-rating></div>
+        <div class="comment" data-comment></div>
+        <div class="date" data-date></div>
+      </div>
+    </template>
+  </body>
 </html>
