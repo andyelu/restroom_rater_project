@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
+
+body {
+  font-family: "Gabarito", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+#nameContainer,
+#ratingContainer {
+  text-align: center;
+  margin: 1.875rem 0;
+}
+
+#nameContainer.restroom-title {
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+
+.review-cards {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.overall-rating {
+    font-weight:bolder;
+    color: #000;
+    font-size: 2.4rem; 
+  }
+  
+  .highest-possible {
+    font-weight: bolder;
+    color: #36454F; 
+    font-size: 1.4rem; 
+  }
+
+.card {
+  background-color: #fff;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0.75rem -1.9rem;
+  padding: 6.7%;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+
+.rating {
+  font-weight: bold;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 5.2%;
+  transform: translateY(-50%);
+  padding: 0.67rem;
+  border-radius: 0.3rem;
+  font-size: 28px;
+  margin-right: 0.625rem;
+
+  background-color: #333;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.date {
+  color: #666;
+  position: absolute;
+  top: 0.66rem;
+  right: 0.66rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.comment {
+  top: 50%;
+  padding-left: 15%;
+  text-align: left;
+  overflow: hidden;
+  word-wrap: break-word;
+}

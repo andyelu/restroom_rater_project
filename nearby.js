@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyDtB9nJjKODzGj_xbzec0IPZaZyKJdpcvw";
+const apiKey = "--Insert API Key Here--";
 
 function initMap() {
   if (!apiKey) {
@@ -33,7 +33,6 @@ function initMap() {
             };
             locations.push(thisRestroom);
           }
-          console.log(restroomObjects);
           resolve(locations);
         })
         .catch((err) => {
