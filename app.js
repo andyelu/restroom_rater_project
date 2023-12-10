@@ -30,22 +30,37 @@ const displayRestroomName = () => {
   const name = getRestroomNameFromUrl();
   const nameContainer = document.getElementById("nameContainer");
   nameContainer.textContent = name;
+  nameContainer.classList.add("restroom-title");
 };
 
 const displayReviews = () => {
   getReviews()
     .then((response) => {
       const jsonData = response;
-      reviews = jsonData.map((review) => {
+      
+      // Reverse the order of reviews
+      const reversedReviews = jsonData.reverse();
+      
+      reviews = reversedReviews.map((review) => {
         const card = reviewCardTemplate.content.cloneNode(true).children[0];
         const rating = card.querySelector("[data-rating]");
         const comment = card.querySelector("[data-comment]");
         const date = card.querySelector("[data-date]");
+
         rating.textContent = review.rating;
         comment.textContent = review.comment;
         date.textContent = review.date_of_review;
 
-        reviewCardContainer.append(card);
+        // Add background color based on rating value
+        if (review.rating === 1 || review.rating === 2) {
+          rating.style.backgroundColor = "#dc3545"; // Red
+        } else if (review.rating === 3) {
+          rating.style.backgroundColor = "#ffc107"; // Yellow
+        } else if (review.rating === 4 || review.rating === 5) {
+          rating.style.backgroundColor = "#28a745"; // Green
+        }
+
+        reviewCardContainer.appendChild(card);
         return {
           rating: review.rating,
           comment: review.comment,
@@ -63,7 +78,12 @@ const displayRating = () => {
   getRating()
     .then((res) => {
       const ratingContainer = document.getElementById("ratingContainer");
-      ratingContainer.textContent = `${res.data}`;
+      const formattedRating = res.data.toFixed(1);
+
+      ratingContainer.innerHTML = `
+      <span class="overall-rating">${formattedRating}</span>
+      <span class="highest-possible">/ 5.0</span>
+      `;
     })
     .catch((err) => {
       console.log(err);
@@ -75,3 +95,4 @@ const displayRating = () => {
 displayRestroomName();
 displayRating();
 displayReviews();
+
