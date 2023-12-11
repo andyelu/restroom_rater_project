@@ -148,6 +148,6 @@ postBtn.addEventListener("click", function () {
       },
     })
     .then((response) => {
-      window.location.href = "https://www.example.com/success";
+      window.location.href = `review.html?id=${getRestroomNameFromUrl()}`;
     });
 });
