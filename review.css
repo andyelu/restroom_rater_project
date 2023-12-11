@@ -7,6 +7,65 @@ body {
   background-color: #f0f0f0;
 }
 
+#btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#post-rate-btn {
+  font-family: "Gabarito", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  background-color: #000000;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 0.625rem;
+}
+
+#rate-btn {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6b7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+#rate-btn:hover {
+  background-color: #374151;
+}
+
+#rate-btn:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  #rate-btn {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
 #nameContainer,
 #ratingContainer {
   text-align: center;
@@ -14,15 +73,14 @@ body {
 }
 
 #nameContainer.restroom-title {
-    margin-top: 12rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  
+  margin-top: 12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
 
 .review-cards {
   width: 30rem;
@@ -30,16 +88,16 @@ body {
 }
 
 .overall-rating {
-    font-weight:bolder;
-    color: #000;
-    font-size: 2.4rem; 
-  }
-  
-  .highest-possible {
-    font-weight: bolder;
-    color: #36454F; 
-    font-size: 1.4rem; 
-  }
+  font-weight: bolder;
+  color: #000;
+  font-size: 2.4rem;
+}
+
+.highest-possible {
+  font-weight: bolder;
+  color: #36454f;
+  font-size: 1.4rem;
+}
 
 .card {
   background-color: #fff;

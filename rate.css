@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Gabarito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.required {
+  color: rgb(255, 89, 89);
+  margin-left: 3px;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.35rem;
+  border: #c1c1c1 2px solid;
+  box-shadow: rgba(126, 126, 126, 0.25) 0px 4px 4px;
+}
+
+.rate-the-restroom-container {
+  display: flex;
+  justify-content: left;
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.left-semi::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #bbbbbb;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  top: 0;
+  left: -1rem;
+}
+
+.left-semi {
+  position: relative;
+  width: 2.5rem;
+  height: 2rem;
+  background-color: #bbbbbb;
+  border-right: 3px solid #f0f0f0;
+}
+
+.right-semi {
+  position: relative;
+  width: 2.5rem;
+  height: 2rem;
+  background-color: #bbbbbb;
+}
+
+.right-semi::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #bbbbbb;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  top: 0;
+  right: -1rem;
+}
+
+.container .star {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  margin: 0;
+  width: 3.5rem;
+  height: 2rem;
+  background-color: #bbbbbb;
+  text-decoration: none;
+  border-right: 3px solid #f0f0f0;
+}
+
+.left-semi.active {
+  background-color: #f7adab;
+}
+
+.left-semi.selected {
+  background-color: #eb5756;
+}
+
+.left-semi.active::before {
+  background-color: #f7adab;
+}
+
+.left-semi::before.active {
+  background-color: #f7adab;
+}
+
+.left-semi.selected::before {
+  background-color: #eb5756;
+}
+
+.circle.active.orange {
+  background-color: #f9cca7;
+}
+
+.circle.selected.orange {
+  background-color: #f2994b;
+}
+
+.circle.active.yellow {
+  background-color: #f8e4a9;
+}
+
+.circle.selected.yellow {
+  background-color: #f2c94c;
+}
+
+.circle.active.light-green {
+  background-color: #c7e7b8;
+}
+
+.circle.selected.light-green {
+  background: #8ecf6f;
+}
+
+.right-semi.active {
+  background-color: #9acaaa;
+}
+
+.right-semi.selected {
+  background-color: #219653;
+}
+
+.right-semi.active::after {
+  background-color: #9acaaa;
+}
+
+.right-semi.selected::after {
+  background-color: #219653;
+}
+
+.circle,
+.right-semi,
+.left-semi,
+.left-semi::before,
+.right-semi::after {
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+#rate-part {
+  font-weight: 200;
+  font-size: 40px;
+}
+
+#restroom-name-part {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.label-container {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#left-label {
+  width: 100px;
+  text-align: right;
+}
+
+#center-gap {
+  width: 275px;
+}
+
+#right-label {
+  width: 100px;
+  text-align: left;
+}
+
+#left-label,
+#right-label,
+.dynamic-label {
+  font-weight: 100;
+  color: #888888;
+}
+
+.black-font {
+  color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.gap {
+  width: 3px;
+}
+
+#title {
+  margin-bottom: 1rem;
+}
+
+.header-container {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+
+.review-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #c1c1c1 2px solid;
+  padding-bottom: 1rem;
+  box-shadow: rgba(126, 126, 126, 0.25) 0px 4px 4px;
+  border-radius: 0.35rem;
+}
+
+.text-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 4rem);
+}
+#review-text {
+  resize: none;
+  padding: 10px;
+  width: calc(100% - 20px);
+  height: 10rem;
+  color: black;
+  font-size: 18px;
+  font-weight: 200;
+  border-radius: 0.3rem;
+  border: 1px solid #d1d1d1;
+  background-color: #f0f0f0;
+}
+
+#review-text:focus {
+  border: 1px solid rgb(129, 129, 129);
+  outline: none;
+}
+
+#word-count-container {
+  width: calc(100% - 5rem);
+  display: flex;
+  justify-content: right;
+}
+
+#word-count {
+  font-size: 14px;
+  color: #8d8d8d;
+}
+
+#post-btn-container {
+  margin-top: 2rem;
+}
+
+#post-btn {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6b7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+#post-btn:hover {
+  background-color: #374151;
+}
+
+#post-btn:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#post-btn:disabled {
+  background-color: #bbbbbb;
+  cursor: default;
+}

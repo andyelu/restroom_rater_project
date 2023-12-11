@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rate</title>
+    <link rel="stylesheet" href="rate.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="rate.js" defer></script>
+  </head>
+  <body>
+    <h1 id="title">
+      <span id="rate-part"></span>
+      <span id="restroom-name-part"></span>
+    </h1>
+    <div class="container">
+      <div class="rating-container">
+        <div class="rate-the-restroom-container">
+          <a>Rate the Restroom</a>
+          <span class="required">*</span>
+        </div>
+        <div class="rating-group">
+          <div class="star">
+            <a href="#" class="left-semi"></a>
+            <a href="#" class="circle orange"></a>
+            <a href="#" class="circle yellow"></a>
+            <a href="#" class="circle light-green"></a>
+            <a href="#" class="right-semi"></a>
+          </div>
+          <div class="label-container">
+            <a id="left-label">1 - Awful</a>
+            <a id="center-gap"></a>
+            <a id="right-label">5 - Awesome</a>
+            <div class="dynamic-label hide"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-container">
+        <div class="header-container">
+          <a id="review-header">Write a Review</a>
+          <span class="required">*</span>
+        </div>
+        <div class="text-box-container">
+          <br />
+          <textarea
+            id="review-text"
+            rows="4"
+            cols="50"
+            maxlength="255"
+            placeholder="Talk about the cleanliness, privacy, and/or accessibility of the restroom"
+          ></textarea>
+        </div>
+        <div id="word-count-container">
+          <a id="word-count"></a>
+        </div>
+      </div>
+      <div id="post-btn-container">
+        <button id="post-btn">Submit Rating</button>
+      </div>
+    </div>
+  </body>
+</html>

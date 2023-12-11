@@ -1,7 +1,12 @@
+const rateBtn = document.getElementById("rate-btn");
 const reviewCardTemplate = document.querySelector("[data-review-template]");
 const reviewCardContainer = document.querySelector(
   "[data-review-cards-container]"
 );
+
+rateBtn.onclick = () => {
+  window.location.href = `rate.html?id=${getRestroomNameFromUrl()}`;
+};
 
 let reviews = [];
 
