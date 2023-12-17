@@ -191,6 +191,43 @@ allGender.addEventListener("click", function () {
 });
 
 // tags
+const busyTag = document.querySelector("#busy-tag");
+const noisyTag = document.querySelector("#noisy-tag");
+const dirtyTag = document.querySelector("#dirty-tag");
+
+let isBusy = "";
+let isNoisy = "";
+let isDirty = "";
+
+busyTag.addEventListener("click", function () {
+  if (isBusy.length == 0) {
+    isBusy = "Busy";
+    busyTag.classList.add("selected");
+  } else {
+    isBusy = "";
+    busyTag.classList.remove("selected");
+  }
+});
+
+noisyTag.addEventListener("click", function () {
+  if (isNoisy.length == 0) {
+    isNoisy = "Noisy";
+    noisyTag.classList.add("selected");
+  } else {
+    isNoisy = "";
+    noisyTag.classList.remove("selected");
+  }
+});
+
+dirtyTag.addEventListener("click", function () {
+  if (isDirty.length == 0) {
+    isDirty = "Dirty";
+    dirtyTag.classList.add("selected");
+  } else {
+    isDirty = "";
+    dirtyTag.classList.remove("selected");
+  }
+});
 
 postBtn.addEventListener("click", function () {
   const postData = {
@@ -200,6 +237,9 @@ postBtn.addEventListener("click", function () {
     gender: selectedGender,
     wheelChair: wheelChairAccess,
     allGender: allGenderAccess,
+    tag1: isBusy,
+    tag2: isNoisy,
+    tag3: isDirty,
   };
 
   axios
