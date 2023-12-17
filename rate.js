@@ -133,9 +133,9 @@ const updateButtonStatus = function () {
 
 updateButtonStatus();
 
-const mensBtn = document.querySelector("#mens-btn");
-const womensBtn = document.querySelector("#womens-btn");
-const allGenderBtn = document.querySelector("#all-gender-btn");
+const mensBtn = document.getElementById("#mens-btn");
+const womensBtn = document.getElementById("#womens-btn");
+const allGenderBtn = document.getElementById("#all-gender-btn");
 
 let selectedGender = "";
 
