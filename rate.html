@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rate</title>
     <link rel="stylesheet" href="rate.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="rate.js" defer></script>
   </head>
   <body>
+    <div id="rate-header">
+      <span>Rate:</span>
+    </div>
     <h1 id="title">
-      <span id="rate-part"></span>
+      <span id="rate-part" class="rate-header"></span>
       <span id="restroom-name-part"></span>
     </h1>
     <div class="container">
@@ -25,11 +25,11 @@
         </div>
         <div class="rating-group">
           <div class="star">
-            <a href="#" class="left-semi"></a>
-            <a href="#" class="circle orange"></a>
-            <a href="#" class="circle yellow"></a>
-            <a href="#" class="circle light-green"></a>
-            <a href="#" class="right-semi"></a>
+            <a class="left-semi"></a>
+            <a class="circle orange"></a>
+            <a class="circle yellow"></a>
+            <a class="circle light-green"></a>
+            <a class="right-semi"></a>
           </div>
           <div class="label-container">
             <a id="left-label">1 - Awful</a>

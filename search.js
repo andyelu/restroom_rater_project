@@ -1,7 +1,5 @@
 const restroomCardTemplate = document.querySelector("[data-restroom-template]");
-const restroomCardContainer = document.querySelector(
-  "[data-restroom-cards-container]"
-);
+const restroomCardContainer = document.querySelector("[data-restroom-cards-container]");
 const searchInput = document.querySelector("[data-search]");
 
 let restrooms = [];
@@ -9,9 +7,7 @@ let restrooms = [];
 searchInput.addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
   restrooms.forEach((restroom) => {
-    const isVisible =
-      restroom.name.toLowerCase().includes(value) ||
-      restroom.location.toLowerCase().includes(value);
+    const isVisible = restroom.name.toLowerCase().includes(value) || restroom.location.toLowerCase().includes(value);
     restroom.element.classList.toggle("hide", !isVisible);
   });
 });

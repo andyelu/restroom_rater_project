@@ -1,4 +1,4 @@
-const apiKey = "--Insert API Key Here--";
+const apiKey = "AIzaSyDtB9nJjKODzGj_xbzec0IPZaZyKJdpcvw";
 
 function initMap() {
   if (!apiKey) {
@@ -20,7 +20,7 @@ function initMap() {
   const getRestroomData = () => {
     return new Promise((resolve, reject) => {
       axios
-        .get("http://54.193.72.63:8080/api/v1/restroom")
+        .get("http://3.101.24.44:8080/api/v1/restroom")
         .then((response) => {
           const restroomObjects = response.data;
 
@@ -45,9 +45,7 @@ function initMap() {
   getRestroomData().then((locations) => {
     locations.forEach((location) => {
       const marker = new google.maps.Marker({
-        position: location.address
-          ? undefined
-          : { lat: location.lat, lng: location.lng },
+        position: location.address ? undefined : { lat: location.lat, lng: location.lng },
         map: map,
         icon: "/icons/pin.png",
         title: location.title,

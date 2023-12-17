@@ -107,7 +107,6 @@ const getRestroomNameFromUrl = () => {
 const ratePart = document.getElementById("rate-part");
 const restroomNamePart = document.getElementById("restroom-name-part");
 
-ratePart.textContent = "Rate: ";
 restroomNamePart.textContent = `${getRestroomNameFromUrl()} Restrooms`;
 
 // get word count as you type
