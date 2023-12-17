@@ -133,15 +133,11 @@ const updateButtonStatus = function () {
 
 updateButtonStatus();
 
-const mensBtn = document.getElementById("#mens-btn");
-const womensBtn = document.getElementById("#womens-btn");
-const allGenderBtn = document.getElementById("#all-gender-btn");
+const mensBtn = document.getElementById("mens-btn");
+const womensBtn = document.getElementById("womens-btn");
+const allGenderBtn = document.getElementById("all-gender-btn");
 
 let selectedGender = "";
-
-mensBtn.addEventListener("click", selectMens());
-womensBtn.addEventListener("click", selectWomens());
-allGenderBtn.addEventListener("click", selectAllGender());
 
 const selectMens = function () {
   selectedGender = "mens";
@@ -163,6 +159,10 @@ const selectAllGender = function () {
   womensBtn.classList.remove("selected");
   allGenderBtn.classList.add("selected");
 };
+
+mensBtn.addEventListener("click", selectMens());
+womensBtn.addEventListener("click", selectWomens());
+allGenderBtn.addEventListener("click", selectAllGender());
 
 const wheelChair = document.querySelector("#wheel-chair");
 const allGender = document.querySelector("#all-gender");

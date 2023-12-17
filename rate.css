@@ -40,6 +40,55 @@ body {
   margin-left: 3px;
 }
 
+.gender-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  align-items: center; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.35rem;
+  background-color: white;
+}
+
+#gender-header {
+  font-size: 12px; /* Adjust the font size as needed */
+  font-weight: bold;
+  color: #36454f;
+}
+
+#mens-btn,
+#womens-btn,
+#all-gender-btn {
+  flex: 1;
+  margin: 0 0.7rem;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+  background-color: #fbfbfb;
+  cursor: pointer;
+}
+
+#mens-btn:hover,
+#womens-btn:hover,
+#all-gender-btn:hover {
+  box-shadow: 0 0 10px #8d8d8d;
+}
+
+#mens-btn.selected,
+#womens-btn.selected,
+#all-gender-btn.selected {
+  color: black;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+  background-color: #bbbbbb;
+  cursor: pointer;
+}
+
 .rating-container {
   margin-top: 1rem;
   display: flex;
@@ -256,7 +305,7 @@ body {
 }
 
 .review-container {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
