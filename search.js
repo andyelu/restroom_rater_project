@@ -18,7 +18,7 @@ searchInput.addEventListener("input", (e) => {
 
 const getData = () => {
   axios
-    .get("http://54.193.72.63:8080/api/v1/restroom")
+    .get("http://3.101.24.44:8080/api/v1/restroom")
     .then((response) => {
       const jsonData = response.data;
       restrooms = jsonData.map((restroom) => {

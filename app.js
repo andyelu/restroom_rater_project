@@ -18,13 +18,13 @@ function getRestroomNameFromUrl() {
 const getRating = () => {
   // Directly return the Promise from axios.get
   return axios.get(
-    `http://54.193.72.63:8080/api/v1/reviews/rating/${getRestroomNameFromUrl()}`
+    `http://3.101.24.44:8080/api/v1/reviews/rating/${getRestroomNameFromUrl()}`
   );
 };
 
 const getReviews = () => {
   return axios
-    .get(`http://54.193.72.63:8080/api/v1/reviews/${getRestroomNameFromUrl()}`)
+    .get(`http://3.101.24.44:8080/api/v1/reviews/${getRestroomNameFromUrl()}`)
     .then((response) => {
       const jsonData = response.data;
       return jsonData;
