@@ -133,11 +133,73 @@ const updateButtonStatus = function () {
 
 updateButtonStatus();
 
+const mensBtn = document.querySelector("#mens-btn");
+const womensBtn = document.querySelector("#womens-btn");
+const allGenderBtn = document.querySelector("#all-gender-btn");
+
+let selectedGender = "";
+
+mensBtn.addEventListener("click", selectMens());
+womensBtn.addEventListener("click", selectWomens());
+allGenderBtn.addEventListener("click", selectAllGender());
+
+const selectMens = function () {
+  selectedGender = "mens";
+  mensBtn.classList.add("selected");
+  womensBtn.classList.remove("selected");
+  allGenderBtn.classList.remove("selected");
+};
+
+const selectWomens = function () {
+  selectedGender = "womens";
+  mensBtn.classList.remove("selected");
+  womensBtn.classList.add("selected");
+  allGenderBtn.classList.remove("selected");
+};
+
+const selectAllGender = function () {
+  selectedGender = "all gender";
+  mensBtn.classList.remove("selected");
+  womensBtn.classList.remove("selected");
+  allGenderBtn.classList.add("selected");
+};
+
+const wheelChair = document.querySelector("#wheel-chair");
+const allGender = document.querySelector("#all-gender");
+
+let wheelChairAccess = false;
+let allGenderAccess = false;
+
+wheelChair.addEventListener("click", function () {
+  if (wheelChairAccess == false) {
+    wheelChairAccess = true;
+    wheelChair.classList.add("selected");
+  } else {
+    wheelChairAccess = false;
+    wheelChair.classList.remove("selected");
+  }
+});
+
+allGender.addEventListener("click", function () {
+  if (allGenderAccess == false) {
+    allGenderAccess = true;
+    allGender.classList.add("selected");
+  } else {
+    allGenderAccess = false;
+    allGender.classList.remove("selected");
+  }
+});
+
+// tags
+
 postBtn.addEventListener("click", function () {
   const postData = {
     restroom_name: getRestroomNameFromUrl(),
     rating: rating,
     comment: textBox.value,
+    gender: selectedGender,
+    wheelChair: wheelChairAccess,
+    allGender: allGenderAccess,
   };
 
   axios
