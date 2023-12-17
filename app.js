@@ -1,8 +1,6 @@
 const rateBtn = document.getElementById("rate-btn");
 const reviewCardTemplate = document.querySelector("[data-review-template]");
-const reviewCardContainer = document.querySelector(
-  "[data-review-cards-container]"
-);
+const reviewCardContainer = document.querySelector("[data-review-cards-container]");
 
 rateBtn.onclick = () => {
   window.location.href = `rate.html?id=${getRestroomNameFromUrl()}`;
@@ -17,18 +15,14 @@ function getRestroomNameFromUrl() {
 
 const getRating = () => {
   // Directly return the Promise from axios.get
-  return axios.get(
-    `http://54.193.72.63:8080/api/v1/reviews/rating/${getRestroomNameFromUrl()}`
-  );
+  return axios.get(`http://3.101.24.44:8080/api/v1/reviews/rating/${getRestroomNameFromUrl()}`);
 };
 
 const getReviews = () => {
-  return axios
-    .get(`http://54.193.72.63:8080/api/v1/reviews/${getRestroomNameFromUrl()}`)
-    .then((response) => {
-      const jsonData = response.data;
-      return jsonData;
-    });
+  return axios.get(`http://3.101.24.44:8080/api/v1/reviews/${getRestroomNameFromUrl()}`).then((response) => {
+    const jsonData = response.data;
+    return jsonData;
+  });
 };
 
 const displayRestroomName = () => {

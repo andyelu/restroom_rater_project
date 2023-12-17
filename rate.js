@@ -141,7 +141,7 @@ postBtn.addEventListener("click", function () {
   };
 
   axios
-    .post("http://54.193.72.63:8080/api/v1/reviews", postData, {
+    .post("http://3.101.24.44:8080/api/v1/reviews", postData, {
       headers: {
         "Content-Type": "application/json",
       },
