@@ -147,13 +147,13 @@ const allGenderBtn = document.getElementById("all-gender-btn");
 let selectedGender = "";
 
 const selectMens = function () {
-  if (selectedGender === "mens") {
+  if (selectedGender === "Mens") {
     selectedGender = "";
     mensBtn.classList.remove("selected");
     womensBtn.classList.remove("selected");
     allGenderBtn.classList.remove("selected");
   } else {
-    selectedGender = "mens";
+    selectedGender = "Mens";
     mensBtn.classList.add("selected");
     womensBtn.classList.remove("selected");
     allGenderBtn.classList.remove("selected");
@@ -162,13 +162,13 @@ const selectMens = function () {
 };
 
 const selectWomens = function () {
-  if (selectedGender === "womens") {
+  if (selectedGender === "Womens") {
     selectedGender = "";
     mensBtn.classList.remove("selected");
     womensBtn.classList.remove("selected");
     allGenderBtn.classList.remove("selected");
   } else {
-    selectedGender = "womens";
+    selectedGender = "Womens";
     mensBtn.classList.remove("selected");
     womensBtn.classList.add("selected");
     allGenderBtn.classList.remove("selected");
@@ -177,13 +177,13 @@ const selectWomens = function () {
 };
 
 const selectAllGender = function () {
-  if (selectedGender === "all gender") {
+  if (selectedGender === "All Gender") {
     selectedGender = "";
     mensBtn.classList.remove("selected");
     womensBtn.classList.remove("selected");
     allGenderBtn.classList.remove("selected");
   } else {
-    selectedGender = "all gender";
+    selectedGender = "All Gender";
     mensBtn.classList.remove("selected");
     womensBtn.classList.remove("selected");
     allGenderBtn.classList.add("selected");

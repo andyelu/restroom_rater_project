@@ -28,13 +28,14 @@ body {
 .icon-container {
   display: flex;
   border: 2px solid #333;
+  background-color: #cce5ff;
+  box-shadow: 0 0 8px #d1d1d1;
   padding: 4px;
   border-radius: 10px;
   width: fit-content;
   height: auto;
   margin-left: 4.5rem;
   margin-right: -4rem;
-  margin-bottom: 0.2rem;
 }
 
 .icon-container img {
@@ -51,13 +52,23 @@ body {
 
 .tag {
   display: inline-block;
-  background-color: #fbfbfb;
+  /* background-color: #fbfbfb; */
+  background-color: #ffcccc;
   box-shadow: 0 0 8px #d1d1d1;
   color: #303030;
   padding: 0.25rem 0.59rem;
   margin-right: 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.97rem;
+}
+
+.gender {
+  font-size: 1rem;
+  font-weight: 800;
+  justify-content: left;
+  display: flex;
+  margin-left: 4.5rem;
+  margin-bottom: 0.25rem;
 }
 
 #btn-container {
@@ -182,6 +193,7 @@ body {
   font-weight: bold;
   color: #000;
   position: absolute;
+  box-shadow: 0 0 8px #d1d1d1;
   top: 50%;
   left: 5.2%;
   transform: translateY(-50%);
@@ -215,7 +227,7 @@ body {
 }
 
 .comment {
-  top:50%;
+  top: 50%;
   margin-top: 0.3rem;
   padding-left: 15%;
   text-align: left;

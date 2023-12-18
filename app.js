@@ -53,9 +53,11 @@ const displayReviews = () => {
         const tags = card.querySelector("[data-tags]");
         const accessible = card.querySelector("[data-accessible]")
         const genderNeutral = card.querySelector("[data-genderNeutral]")
+        const gender = card.querySelector("[data-gender]")
         const date = card.querySelector("[data-date]");
         rating.textContent = review.rating;
         comment.textContent = review.comment;
+        if (review.gender) gender.textContent = "Restroom Used: " + review.gender;
         date.textContent = review.date_of_review;
 
         // Add background color based on rating value

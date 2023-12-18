@@ -8,11 +8,22 @@ function initMap() {
 
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 18,
-    center: { lat: 32.2319, lng: -110.9527 },
+    center: { lat: 32.2319, lng: -110.951 },
     mapTypeControl: false,
     streetViewControl: false,
     fullscreenControl: false,
     keyboardShortcuts: false,
+    maxZoom: 18,
+    minZoom: 16,
+    restriction: {
+      latLngBounds: {
+        north: 32.2419,
+        south: 32.2219,
+        east: -110.931,
+        west: -110.971,
+      },
+      strictBounds: false,
+    },
   });
 
   const infoWindow = new google.maps.InfoWindow();
@@ -47,7 +58,7 @@ function initMap() {
       const marker = new google.maps.Marker({
         position: location.address ? undefined : { lat: location.lat, lng: location.lng },
         map: map,
-        icon: "/icons/pin.png",
+        icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
         title: location.title,
       });
 
@@ -57,6 +68,7 @@ function initMap() {
             <h3 class="info-title">${location.title}</h3>
             <p class="info-address"> ${location.address}</p>
             <p class="info-directions"><a href="https://www.google.com/maps?q=${location.address}" target="_blank">Get Directions</a></p>
+            <p class="read-reviews"><a href="review.html?id=${location.title}" target="_blank">Reviews</a></p>
           </div>
         `;
 
