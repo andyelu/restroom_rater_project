@@ -7,6 +7,22 @@ let length;
 
 const postBtn = document.getElementById("post-btn");
 
+const updateButtonStatus = function () {
+  if (
+    rating > 0 &&
+    rating <= 5 &&
+    length > 1 &&
+    length <= 255 &&
+    selectedGender.length != 0
+  ) {
+    postBtn.disabled = false;
+  } else {
+    postBtn.disabled = true;
+  }
+};
+
+updateButtonStatus();
+
 function getRatingText(rating) {
   switch (rating) {
     case 1:
@@ -124,16 +140,6 @@ textBox.addEventListener("input", (e) => {
   updateButtonStatus();
 });
 
-const updateButtonStatus = function () {
-  if (rating > 0 && rating <= 5 && length > 1 && length <= 255) {
-    postBtn.disabled = false;
-  } else {
-    postBtn.disabled = true;
-  }
-};
-
-updateButtonStatus();
-
 const mensBtn = document.getElementById("mens-btn");
 const womensBtn = document.getElementById("womens-btn");
 const allGenderBtn = document.getElementById("all-gender-btn");
@@ -141,32 +147,56 @@ const allGenderBtn = document.getElementById("all-gender-btn");
 let selectedGender = "";
 
 const selectMens = function () {
-  selectedGender = "mens";
-  mensBtn.classList.add("selected");
-  womensBtn.classList.remove("selected");
-  allGenderBtn.classList.remove("selected");
+  if (selectedGender === "mens") {
+    selectedGender = "";
+    mensBtn.classList.remove("selected");
+    womensBtn.classList.remove("selected");
+    allGenderBtn.classList.remove("selected");
+  } else {
+    selectedGender = "mens";
+    mensBtn.classList.add("selected");
+    womensBtn.classList.remove("selected");
+    allGenderBtn.classList.remove("selected");
+  }
+  updateButtonStatus();
 };
 
 const selectWomens = function () {
-  selectedGender = "womens";
-  mensBtn.classList.remove("selected");
-  womensBtn.classList.add("selected");
-  allGenderBtn.classList.remove("selected");
+  if (selectedGender === "womens") {
+    selectedGender = "";
+    mensBtn.classList.remove("selected");
+    womensBtn.classList.remove("selected");
+    allGenderBtn.classList.remove("selected");
+  } else {
+    selectedGender = "womens";
+    mensBtn.classList.remove("selected");
+    womensBtn.classList.add("selected");
+    allGenderBtn.classList.remove("selected");
+  }
+  updateButtonStatus();
 };
 
 const selectAllGender = function () {
-  selectedGender = "all gender";
-  mensBtn.classList.remove("selected");
-  womensBtn.classList.remove("selected");
-  allGenderBtn.classList.add("selected");
+  if (selectedGender === "all gender") {
+    selectedGender = "";
+    mensBtn.classList.remove("selected");
+    womensBtn.classList.remove("selected");
+    allGenderBtn.classList.remove("selected");
+  } else {
+    selectedGender = "all gender";
+    mensBtn.classList.remove("selected");
+    womensBtn.classList.remove("selected");
+    allGenderBtn.classList.add("selected");
+  }
+  updateButtonStatus();
 };
 
 mensBtn.addEventListener("click", selectMens);
 womensBtn.addEventListener("click", selectWomens);
 allGenderBtn.addEventListener("click", selectAllGender);
 
-const wheelChair = document.querySelector("#wheel-chair");
-const allGender = document.querySelector("#all-gender");
+const wheelChair = document.querySelector("#wheelchair-icon");
+const allGender = document.querySelector("#gender-neutral");
 
 let wheelChairAccess = false;
 let allGenderAccess = false;

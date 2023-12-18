@@ -33,6 +33,7 @@ body {
   align-items: center;
   text-align: center;
   animation: transitionIn 1s forwards;
+  margin-bottom: 3rem;
 }
 
 .required {
@@ -51,11 +52,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  gap: 2rem;
+  width: 90%;
+}
+
+#wheelchair-icon {
+  height: 3rem;
+  cursor: pointer;
 }
 
 #gender-neutral {
-  height: 40%;
+  height: 3rem;
+  cursor: pointer;
 }
 
 .gender-container {
@@ -64,10 +72,27 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 6rem;
-  align-items: left;
+  align-items: flex-start;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 0.35rem;
   background-color: white;
+}
+
+.icons {
+  padding: 0.35rem;
+  border: 1px solid #d1d1d1;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon-override {
+  height: 6rem;
+}
+
+@media (max-width: 600px) {
+  .icon-override {
+    height: 8rem;
+  }
 }
 
 #gender-header {
@@ -78,7 +103,12 @@ body {
 
 #mens-btn,
 #womens-btn,
-#all-gender-btn {
+#all-gender-btn,
+#wheelchair-icon,
+#gender-neutral,
+#busy-tag,
+#noisy-tag,
+#dirty-tag {
   flex: 1;
   margin: 0 0.7rem;
   border-radius: 0.35rem;
@@ -90,19 +120,36 @@ body {
   border: 1px solid #d1d1d1;
   background-color: #fbfbfb;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #mens-btn:hover,
 #womens-btn:hover,
-#all-gender-btn:hover {
+#all-gender-btn:hover,
+#wheelchair-icon:hover,
+#gender-neutral:hover,
+#busy-tag:hover,
+#noisy-tag:hover,
+#dirty-tag:hover {
   box-shadow: 0 0 10px #8d8d8d;
 }
 
 #mens-btn.selected,
 #womens-btn.selected,
-#all-gender-btn.selected {
+#all-gender-btn.selected,
+#wheelchair-icon.selected,
+#gender-neutral.selected,
+#busy-tag.selected,
+#noisy-tag.selected,
+#dirty-tag.selected {
   color: black;
   text-align: center;
+  border: 1px solid #d1d1d1;
+  background-color: #bbbbbb;
+  cursor: pointer;
+}
+
+.img-selected {
   border: 1px solid #d1d1d1;
   background-color: #bbbbbb;
   cursor: pointer;
@@ -263,7 +310,7 @@ body {
 }
 
 #rate-header {
-  margin-top: 10rem;
+  margin-top: 3rem;
   margin-bottom: 0.5rem;
   font-size: 30px;
   font-weight: 550;
@@ -321,6 +368,12 @@ body {
   display: flex;
   justify-content: left;
   width: 100%;
+}
+
+.icon-container {
+  display: flex;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 .review-container {
