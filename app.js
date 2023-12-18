@@ -1,4 +1,5 @@
 const rateBtn = document.getElementById("rate-btn");
+const mapBtn = document.getElementById("map-btn");
 const reviewCardTemplate = document.querySelector("[data-review-template]");
 const reviewCardContainer = document.querySelector(
   "[data-review-cards-container]"
@@ -6,6 +7,10 @@ const reviewCardContainer = document.querySelector(
 
 rateBtn.onclick = () => {
   window.location.href = `rate.html?id=${getRestroomNameFromUrl()}`;
+};
+
+mapBtn.onclick = () => {
+  window.location.href = `nearby.html?location=${location}`;
 };
 
 let reviews = [];
