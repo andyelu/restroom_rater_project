@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restroom Reviews</title>
@@ -11,7 +14,8 @@
   </head>
   <body>
     <div class="restroom-title" id="nameContainer"></div>
-    <div id="anotherContainer"></div> <!-- Adjust the ID or use a class if needed -->
+    <div id="anotherContainer"></div>
+    <!-- Adjust the ID or use a class if needed -->
     <div id="ratingContainer"></div>
     <div id="btn-container">
       <button id="rate-btn">Rate</button>
@@ -24,13 +28,15 @@
       <div class="card">
         <div class="content">
           <div class="rating" data-rating></div>
-          <div class="gender" data-gender></div>
-          <div class="img-container">
-            <div data-accessible="[Accessible]"></div>
-            <div data-genderNeutral="[Gender Neutral]"></div>
+          <div class="item-container">
+            <div class="img-container">
+              <div data-accessible="[Accessible]"></div>
+              <div data-genderNeutral="[Gender Neutral]"></div>
+            </div>
+            <div class="gender" data-gender></div>
+            <div class="comment" data-comment></div>
+            <div class="tags" data-tags></div>
           </div>
-          <div class="comment" data-comment></div>
-          <div class="tags" data-tags></div>
         </div>
         <div class="date" data-date></div>
       </div>
