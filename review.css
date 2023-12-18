@@ -20,6 +20,27 @@ body {
   animation: transitionIn 0.75s;
 }
 
+.img-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-container {
+  display: flex;
+  border: 1px solid #333;
+  padding: 4px;
+  border-radius: 4px;
+  width: fit-content;
+  height: auto;
+  margin-left: 4.5rem;
+  margin-right: -3.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.icon-container img {
+  display: block;
+}
+
 .tags {
   margin-top: 1rem;
   display: flex;
@@ -79,6 +100,20 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   width: auto;
+}
+
+.accessible,
+.gender-neutral {
+  /* Your styles for the accessible and gender-neutral elements */
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333; /* Adjust the color as needed */
+}
+
+/* Optional: Hide the elements if they don't have content */
+.accessible:empty,
+.gender-neutral:empty {
+  display: none;
 }
 
 #rate-btn:hover {

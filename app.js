@@ -51,6 +51,8 @@ const displayReviews = () => {
         const rating = card.querySelector("[data-rating]");
         const comment = card.querySelector("[data-comment]");
         const tags = card.querySelector("[data-tags]");
+        const accessible = card.querySelector("[data-accessible]")
+        const genderNeutral = card.querySelector("[data-genderNeutral]")
         const date = card.querySelector("[data-date]");
         rating.textContent = review.rating;
         comment.textContent = review.comment;
@@ -70,7 +72,25 @@ const displayReviews = () => {
         if (review.tag2 != '' && review.tag2 !== null) tagElements.push(createTagElement(review.tag2));
         if (review.tag3 != '' && review.tag3 !== null) tagElements.push(createTagElement(review.tag3));
         tags.append(...tagElements);
-        
+
+        if (review.wheelChair === true) {
+          const accessibleIconContainer = document.createElement("span");
+          accessibleIconContainer.classList.add("icon-container"); // Add this line to apply the class
+          const accessibleIcon = createSVGIcon("icons/noun-wheelchair-accessible-4293_1.svg", 28, 28); // Customize size if needed
+          accessibleIconContainer.appendChild(accessibleIcon);
+          accessible.appendChild(accessibleIconContainer);
+        } else {
+          accessible.style.display = "none";
+        }
+
+        if (review.allGender === true) {
+          const genderNeutralIconContainer = document.createElement("span");
+          genderNeutralIconContainer.classList.add("icon-container");
+          const genderNeutralIcon = createSVGIcon("icons/neutral.svg", 28, 28);
+          genderNeutralIconContainer.appendChild(genderNeutralIcon);
+          genderNeutral.appendChild(genderNeutralIconContainer);
+        }
+
         reviewCardContainer.appendChild(card);
         return {
           rating: review.rating,
@@ -83,6 +103,15 @@ const displayReviews = () => {
     .catch((err) => {
       console.error("Error fetching data:", err);
     });
+};
+
+const createSVGIcon = (iconPath, width = 32, height = 32) => {
+  const svgIcon = document.createElement("img");
+  svgIcon.src = iconPath;
+  svgIcon.alt = "Accessible Icon";
+  svgIcon.style.width = `${width}px`;
+  svgIcon.style.height = `${height}px`;
+  return svgIcon;
 };
 
 const createTagElement = (tagName) => {
