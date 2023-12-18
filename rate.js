@@ -59,6 +59,7 @@ stars.forEach((item, index1) => {
 
     if (rating != null) {
       stars.forEach((star, index) => {
+        dynamicLabel.classList.add("black-font");
         if (index < rating) {
           star.classList.add("selected");
         }
@@ -221,7 +222,7 @@ noisyTag.addEventListener("click", function () {
 
 dirtyTag.addEventListener("click", function () {
   if (isDirty.length == 0) {
-    isDirty = "Dirty";
+    isDirty = "Really Dirty";
     dirtyTag.classList.add("selected");
   } else {
     isDirty = "";
