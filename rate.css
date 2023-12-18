@@ -47,6 +47,17 @@ body {
   width: 75%;
 }
 
+.access-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+
+#gender-neutral {
+  height: 40%;
+}
+
 .gender-container {
   margin-top: 1rem;
   display: flex;

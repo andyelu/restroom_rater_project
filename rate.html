@@ -39,7 +39,6 @@
           </div>
         </div>
       </div>
-
       <div class="gender-container">
         <div class="rate-the-restroom-container">
           <a>Select Restroom Used</a>
@@ -52,29 +51,42 @@
             <button id="all-gender-btn">All Gender</button>
           </div> 
         </div>
-        
         </div>
+
+        <div class="gender-container">
+          <div class="rate-the-restroom-container">
+            <a>What were the accessibility options?</a>
+            <span class="required"></span>
+          </div>
+          <div class="center-container">
+            <div class="access-btn-container">
+              <img src="icons/noun-wheelchair-accessible-4293_1.svg" alt="Wheelchair Icon">
+              <img id = "gender-neutral" src="icons/neutral.svg" alt="Gender Neutral Icon">
+            </div> 
+          </div>
+        </div>
+        <div class="review-container">
+          <div class="header-container">
+            <a id="review-header">Write a Review</a>
+            <span class="required">*</span>
+          </div>
+          <div class="text-box-container">
+            <br />
+            <textarea
+              id="review-text"
+              rows="4"
+              cols="50"
+              maxlength="255"
+              placeholder="Talk about the cleanliness, privacy, and/or accessibility of the restroom"
+            ></textarea>
+          </div>
+          <div id="word-count-container">
+            <a id="word-count"></a>
+          </div>
+        </div>
+        
       </div>
 
-      <div class="review-container">
-        <div class="header-container">
-          <a id="review-header">Write a Review</a>
-          <span class="required">*</span>
-        </div>
-        <div class="text-box-container">
-          <br />
-          <textarea
-            id="review-text"
-            rows="4"
-            cols="50"
-            maxlength="255"
-            placeholder="Talk about the cleanliness, privacy, and/or accessibility of the restroom"
-          ></textarea>
-        </div>
-        <div id="word-count-container">
-          <a id="word-count"></a>
-        </div>
-      </div>
       <div id="post-btn-container">
         <button id="post-btn">Submit Rating</button>
       </div>
