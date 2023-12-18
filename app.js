@@ -131,9 +131,16 @@ const createSVGIcon = (iconPath, width = 32, height = 32) => {
   return svgIcon;
 };
 
+const positiveTags = ["Usually Empty", "Clean", "Quiet"];
+
 const createTagElement = (tagName) => {
   const tagElement = document.createElement("span");
   tagElement.classList.add("tag");
+
+  if (positiveTags.includes(tagName)) {
+    tagElement.classList.add("positive");
+  }
+
   tagElement.textContent = tagName;
   return tagElement;
 };
