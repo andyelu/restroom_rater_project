@@ -50,6 +50,7 @@ const displayReviews = () => {
         const card = reviewCardTemplate.content.cloneNode(true).children[0];
         const rating = card.querySelector("[data-rating]");
         const comment = card.querySelector("[data-comment]");
+        const tags = card.querySelector("[data-tags]");
         const date = card.querySelector("[data-date]");
         rating.textContent = review.rating;
         comment.textContent = review.comment;
@@ -64,6 +65,12 @@ const displayReviews = () => {
           rating.style.backgroundColor = "#28a745"; // Green
         }
 
+        const tagElements = [];
+        if (review.tag1 != '' && review.tag1 !== null) tagElements.push(createTagElement(review.tag1));
+        if (review.tag2 != '' && review.tag2 !== null) tagElements.push(createTagElement(review.tag2));
+        if (review.tag3 != '' && review.tag3 !== null) tagElements.push(createTagElement(review.tag3));
+        tags.append(...tagElements);
+        
         reviewCardContainer.appendChild(card);
         return {
           rating: review.rating,
@@ -76,6 +83,13 @@ const displayReviews = () => {
     .catch((err) => {
       console.error("Error fetching data:", err);
     });
+};
+
+const createTagElement = (tagName) => {
+  const tagElement = document.createElement("span");
+  tagElement.classList.add("tag");
+  tagElement.textContent = tagName;
+  return tagElement;
 };
 
 const displayRating = () => {

@@ -20,6 +20,25 @@ body {
   animation: transitionIn 0.75s;
 }
 
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-left: 4.4rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #fbfbfb;
+  box-shadow: 0 0 8px #d1d1d1;
+  color: #303030;
+  padding: 0.25rem 0.59rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.97rem;
+}
+
 #btn-container {
   display: flex;
   flex-direction: row;
@@ -44,9 +63,8 @@ body {
   color: #ffffff;
   cursor: pointer;
   flex: 0 0 auto;
-  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.5rem;
