@@ -28,7 +28,7 @@ body {
 .icon-container {
   display: flex;
   border: 2px solid #333;
-  background-color: #b2defa;
+  background-color: #d4edfc;
   box-shadow: 0 0 8px #d1d1d1;
   padding: 4px;
   border-radius: 10px;
@@ -60,6 +60,10 @@ body {
   margin-right: 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.97rem;
+}
+
+.tag.positive {
+  background-color: #cce5c6;
 }
 
 .gender {
@@ -126,7 +130,7 @@ body {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.5rem;
-  padding: 0.6rem 0.4rem;
+  padding: 0.7rem 0.5rem;
   margin-top: 0.5rem;
   text-align: center;
   text-decoration: none #6b7280 solid;
