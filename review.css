@@ -215,7 +215,8 @@ body {
 }
 
 .comment {
-  top: 50%;
+  top:50%;
+  margin-top: 0.3rem;
   padding-left: 15%;
   text-align: left;
   overflow: hidden;
