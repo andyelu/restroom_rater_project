@@ -105,7 +105,21 @@ body {
 #womens-btn,
 #all-gender-btn,
 #wheelchair-icon,
-#gender-neutral,
+#gender-neutral {
+  flex: 1;
+  margin: 0 0.7rem;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+  background-color: #fbfbfb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 #busy-tag,
 #noisy-tag,
 #dirty-tag {
@@ -118,7 +132,24 @@ body {
   font-size: 16px;
   text-align: center;
   border: 1px solid #d1d1d1;
-  background-color: #fbfbfb;
+  background-color: #ffcccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#usually-empty-tag,
+#quiet-tag,
+#clean-tag {
+  flex: 1;
+  margin: 0 0.7rem;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+  background-color: #cce5c6;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -134,18 +165,41 @@ body {
   box-shadow: 0 0 10px #8d8d8d;
 }
 
+#usually-empty-tag:hover,
+#quiet-tag:hover,
+#clean-tag:hover {
+  box-shadow: 0 0 10px #8d8d8d;
+}
+
 #mens-btn.selected,
 #womens-btn.selected,
 #all-gender-btn.selected,
 #wheelchair-icon.selected,
-#gender-neutral.selected,
+#gender-neutral.selected {
+  color: black;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+  background-color: #bbbbbb;
+  cursor: pointer;
+}
+
 #busy-tag.selected,
 #noisy-tag.selected,
 #dirty-tag.selected {
   color: black;
   text-align: center;
   border: 1px solid #d1d1d1;
-  background-color: #bbbbbb;
+  background-color: #e78787;
+  cursor: pointer;
+}
+
+#usually-empty-tag.selected,
+#quiet-tag.selected,
+#clean-tag.selected {
+  color: black;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+  background-color: #8ecf6f;
   cursor: pointer;
 }
 
@@ -474,4 +528,13 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.center-tags {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }

@@ -230,10 +230,56 @@ let isBusy = "";
 let isNoisy = "";
 let isDirty = "";
 
+const usuallyEmptyTag = document.querySelector("#usually-empty-tag");
+const quietTag = document.querySelector("#quiet-tag");
+const cleanTag = document.querySelector("#clean-tag");
+
+let isUsuallyEmpty = "";
+let isQuiet = "";
+let isClean = "";
+
+usuallyEmptyTag.addEventListener("click", function () {
+  if (isUsuallyEmpty.length == 0) {
+    isUsuallyEmpty = "Usually Empty";
+    usuallyEmptyTag.classList.add("selected");
+    isBusy = "";
+    busyTag.classList.remove("selected");
+  } else {
+    isUsuallyEmpty = "";
+    usuallyEmptyTag.classList.remove("selected");
+  }
+});
+
+quietTag.addEventListener("click", function () {
+  if (isQuiet.length == 0) {
+    isQuiet = "Quiet";
+    quietTag.classList.add("selected");
+    isNoisy = "";
+    noisyTag.classList.remove("selected");
+  } else {
+    isQuiet = "";
+    quietTag.classList.remove("selected");
+  }
+});
+
+cleanTag.addEventListener("click", function () {
+  if (isClean.length == 0) {
+    isClean = "Clean";
+    cleanTag.classList.add("selected");
+    isDirty = "";
+    dirtyTag.classList.remove("selected");
+  } else {
+    isClean = "";
+    cleanTag.classList.remove("selected");
+  }
+});
+
 busyTag.addEventListener("click", function () {
   if (isBusy.length == 0) {
     isBusy = "Busy";
     busyTag.classList.add("selected");
+    isUsuallyEmpty = "";
+    usuallyEmptyTag.classList.remove("selected");
   } else {
     isBusy = "";
     busyTag.classList.remove("selected");
@@ -244,6 +290,8 @@ noisyTag.addEventListener("click", function () {
   if (isNoisy.length == 0) {
     isNoisy = "Noisy";
     noisyTag.classList.add("selected");
+    isQuiet = "";
+    quietTag.classList.remove("selected");
   } else {
     isNoisy = "";
     noisyTag.classList.remove("selected");
@@ -254,6 +302,8 @@ dirtyTag.addEventListener("click", function () {
   if (isDirty.length == 0) {
     isDirty = "Really Dirty";
     dirtyTag.classList.add("selected");
+    isClean = "";
+    cleanTag.classList.remove("selected");
   } else {
     isDirty = "";
     dirtyTag.classList.remove("selected");
@@ -268,9 +318,9 @@ postBtn.addEventListener("click", function () {
     gender: selectedGender,
     wheelChair: wheelChairAccess,
     allGender: allGenderAccess,
-    tag1: isBusy,
-    tag2: isNoisy,
-    tag3: isDirty,
+    tag1: isBusy || isUsuallyEmpty,
+    tag2: isNoisy || isQuiet,
+    tag3: isDirty || isClean,
   };
 
   axios
