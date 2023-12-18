@@ -27,9 +27,9 @@ body {
 
 .icon-container {
   display: flex;
-  border: 1px solid #333;
+  border: 2px solid #333;
   padding: 4px;
-  border-radius: 4px;
+  border-radius: 10px;
   width: fit-content;
   height: auto;
   margin-left: 4.5rem;
