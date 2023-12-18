@@ -160,9 +160,9 @@ const selectAllGender = function () {
   allGenderBtn.classList.add("selected");
 };
 
-mensBtn.addEventListener("click", selectMens());
-womensBtn.addEventListener("click", selectWomens());
-allGenderBtn.addEventListener("click", selectAllGender());
+mensBtn.addEventListener("click", selectMens);
+womensBtn.addEventListener("click", selectWomens);
+allGenderBtn.addEventListener("click", selectAllGender);
 
 const wheelChair = document.querySelector("#wheel-chair");
 const allGender = document.querySelector("#all-gender");

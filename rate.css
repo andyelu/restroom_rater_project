@@ -40,12 +40,20 @@ body {
   margin-left: 3px;
 }
 
+.gender-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+}
+
 .gender-container {
   margin-top: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 4rem;
-  align-items: center; 
+  height: 6rem;
+  align-items: left;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 0.35rem;
   background-color: white;
@@ -364,8 +372,9 @@ body {
   color: #ffffff;
   cursor: pointer;
   flex: 0 0 auto;
-  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.5rem;
@@ -395,4 +404,10 @@ body {
 #post-btn:disabled {
   background-color: #bbbbbb;
   cursor: default;
+}
+
+.center-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
