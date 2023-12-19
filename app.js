@@ -1,7 +1,9 @@
 const rateBtn = document.getElementById("rate-btn");
 const mapBtn = document.getElementById("map-btn");
 const reviewCardTemplate = document.querySelector("[data-review-template]");
-const reviewCardContainer = document.querySelector("[data-review-cards-container]");
+const reviewCardContainer = document.querySelector(
+  "[data-review-cards-container]"
+);
 
 rateBtn.onclick = () => {
   window.location.href = `rate.html?id=${getRestroomNameFromUrl()}`;
@@ -15,20 +17,27 @@ function getRestroomNameFromUrl() {
 }
 
 mapBtn.onclick = () => {
-  getLocation().then((location) => {
-    window.location.href = `https://www.google.com/maps?q=${location}`;
-  }).catch((error) => {
-    console.error("Error:", error);
-  });
+  getLocation()
+    .then((location) => {
+      window.location.href = `https://www.google.com/maps?q=${location}`;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 };
 
 const getRating = () => {
   // Directly return the Promise from axios.get
-  return axios.get(`http://3.101.24.44:8080/api/v1/reviews/rating/${getRestroomNameFromUrl()}`);
+  return axios.get(
+    `http://3.101.24.44:8080/api/v1/reviews/rating/${getRestroomNameFromUrl()}`
+  );
 };
 
 const getLocation = () => {
-  return axios.get(`http://3.101.24.44:8080/api/v1/restroom/search?name=${getRestroomNameFromUrl()}`)
+  return axios
+    .get(
+      `http://3.101.24.44:8080/api/v1/restroom/search?name=${getRestroomNameFromUrl()}`
+    )
     .then((response) => {
       const jsonData = response.data;
       const location = jsonData.location;
@@ -38,12 +47,13 @@ const getLocation = () => {
     });
 };
 
-
 const getReviews = () => {
-  return axios.get(`http://3.101.24.44:8080/api/v1/reviews/${getRestroomNameFromUrl()}`).then((response) => {
-    const jsonData = response.data;
-    return jsonData;
-  });
+  return axios
+    .get(`http://3.101.24.44:8080/api/v1/reviews/${getRestroomNameFromUrl()}`)
+    .then((response) => {
+      const jsonData = response.data;
+      return jsonData;
+    });
 };
 
 const displayRestroomName = () => {
@@ -72,7 +82,11 @@ const displayReviews = () => {
         const date = card.querySelector("[data-date]");
         rating.textContent = review.rating;
         comment.textContent = review.comment;
-        if (review.gender) gender.textContent = "Restroom Used: " + review.gender;
+        if (review.gender) {
+          gender.innerHTML =
+            "<span style='font-weight:normal;'>Restroom Used:&nbsp;</span>" +
+            review.gender;
+        }
         date.textContent = review.date_of_review;
 
         // Add background color based on rating value
@@ -85,15 +99,22 @@ const displayReviews = () => {
         }
 
         const tagElements = [];
-        if (review.tag1 != "" && review.tag1 !== null) tagElements.push(createTagElement(review.tag1));
-        if (review.tag2 != "" && review.tag2 !== null) tagElements.push(createTagElement(review.tag2));
-        if (review.tag3 != "" && review.tag3 !== null) tagElements.push(createTagElement(review.tag3));
+        if (review.tag1 != "" && review.tag1 !== null)
+          tagElements.push(createTagElement(review.tag1));
+        if (review.tag2 != "" && review.tag2 !== null)
+          tagElements.push(createTagElement(review.tag2));
+        if (review.tag3 != "" && review.tag3 !== null)
+          tagElements.push(createTagElement(review.tag3));
         tags.append(...tagElements);
 
         if (review.wheelChair === true) {
           const accessibleIconContainer = document.createElement("span");
           accessibleIconContainer.classList.add("icon-container"); // Add this line to apply the class
-          const accessibleIcon = createSVGIcon("icons/noun-wheelchair-accessible-4293_1.svg", 28, 28); // Customize size if needed
+          const accessibleIcon = createSVGIcon(
+            "icons/noun-wheelchair-accessible-4293_1.svg",
+            28,
+            28
+          ); // Customize size if needed
           accessibleIconContainer.appendChild(accessibleIcon);
           accessible.appendChild(accessibleIconContainer);
         } else {
