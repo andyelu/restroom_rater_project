@@ -31,7 +31,7 @@ function initMap() {
   const getRestroomData = () => {
     return new Promise((resolve, reject) => {
       axios
-        .get("http://3.101.24.44:8080/api/v1/restroom")
+        .get("https://restroomrater.org/api/v1/restroom")
         .then((response) => {
           const restroomObjects = response.data;
 
@@ -56,7 +56,9 @@ function initMap() {
   getRestroomData().then((locations) => {
     locations.forEach((location) => {
       const marker = new google.maps.Marker({
-        position: location.address ? undefined : { lat: location.lat, lng: location.lng },
+        position: location.address
+          ? undefined
+          : { lat: location.lat, lng: location.lng },
         map: map,
         icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
         title: location.title,

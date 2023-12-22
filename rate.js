@@ -324,7 +324,7 @@ postBtn.addEventListener("click", function () {
   };
 
   axios
-    .post("http://3.101.24.44:8080/api/v1/reviews", postData, {
+    .post("https://restroomrater.org/api/v1/reviews", postData, {
       headers: {
         "Content-Type": "application/json",
       },

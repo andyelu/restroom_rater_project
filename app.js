@@ -29,14 +29,14 @@ mapBtn.onclick = () => {
 const getRating = () => {
   // Directly return the Promise from axios.get
   return axios.get(
-    `http://3.101.24.44:8080/api/v1/reviews/rating/${getRestroomNameFromUrl()}`
+    `https://restroomrater.org/api/v1/reviews/rating/${getRestroomNameFromUrl()}`
   );
 };
 
 const getLocation = () => {
   return axios
     .get(
-      `http://3.101.24.44:8080/api/v1/restroom/search?name=${getRestroomNameFromUrl()}`
+      `https://restroomrater.org/api/v1/restroom/search?name=${getRestroomNameFromUrl()}`
     )
     .then((response) => {
       const jsonData = response.data;
@@ -49,7 +49,7 @@ const getLocation = () => {
 
 const getReviews = () => {
   return axios
-    .get(`http://3.101.24.44:8080/api/v1/reviews/${getRestroomNameFromUrl()}`)
+    .get(`https://restroomrater.org/api/v1/reviews/${getRestroomNameFromUrl()}`)
     .then((response) => {
       const jsonData = response.data;
       return jsonData;
