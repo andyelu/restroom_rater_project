@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Gabarito", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: "Gabarito";
+    margin-top: 12rem;
+    font-size: 3rem;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #toggleBtn {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.35rem;
+    margin-left: 20rem;
+    color: black;
+    text-align: center;
+    border: 1px solid #d1d1d1;
+    background-color: #fbfbfb;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.restroom-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}

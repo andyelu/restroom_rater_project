@@ -27,7 +27,6 @@ mapBtn.onclick = () => {
 };
 
 const getRating = () => {
-  // Directly return the Promise from axios.get
   return axios.get(
     `https://restroomrater.org/api/v1/reviews/rating/${getRestroomNameFromUrl()}`
   );
@@ -68,7 +67,6 @@ const displayReviews = () => {
     .then((response) => {
       const jsonData = response;
 
-      // Reverse the order of reviews
       const reversedReviews = jsonData.reverse();
 
       reviews = reversedReviews.map((review) => {
@@ -89,13 +87,12 @@ const displayReviews = () => {
         }
         date.textContent = review.date_of_review;
 
-        // Add background color based on rating value
         if (review.rating === 1 || review.rating === 2) {
-          rating.style.backgroundColor = "#dc3545"; // Red
+          rating.style.backgroundColor = "#dc3545";
         } else if (review.rating === 3) {
-          rating.style.backgroundColor = "#ffc107"; // Yellow
+          rating.style.backgroundColor = "#ffc107"; 
         } else if (review.rating === 4 || review.rating === 5) {
-          rating.style.backgroundColor = "#28a745"; // Green
+          rating.style.backgroundColor = "#28a745";
         }
 
         const tagElements = [];
