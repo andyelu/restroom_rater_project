@@ -61,7 +61,7 @@ toggleBtn.onclick = async () => {
   } catch (error) {
     console.error("Error:", error);
   }
-};
+}; //d
 
 const reviewCardsContainer = document.querySelector("[data-restroom-cards-container]");
 const reviewTemplate = document.querySelector("[data-restroom-template]");
