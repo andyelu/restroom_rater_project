@@ -73,6 +73,9 @@ const displayRankedRestrooms = () => {
     restroomsContainer.removeChild(restroomsContainer.firstChild);
   }
 
+  const highestRatedRestroom = sortedRestrooms[0];
+  console.log(highestRatedRestroom);
+
   sortedRestrooms.forEach((restroomData) => {
     const restroom = restroomData.restroom;
     const rating = restroomData.rating;
@@ -85,6 +88,9 @@ const displayRankedRestrooms = () => {
 
     const ratingElement = document.createElement("p");
     ratingElement.textContent = `${rating}`;
+
+    card.appendChild(nameElement);
+
     if (rating == 0) {
       ratingElement.classList.add("no-rating");
     } else if (rating > 0 && rating < 3) {
@@ -93,11 +99,18 @@ const displayRankedRestrooms = () => {
       ratingElement.classList.add("medium-rating");
     } else {
       ratingElement.classList.add("high-rating");
+      if (restroom == highestRatedRestroom.restroom) {
+//Maybe change colors
+        const crownIcon = document.createElement("img");
+        crownIcon.src = "./icons/crown.png";
+        crownIcon.alt = "Crown Icon";
+        crownIcon.classList.add("crown-icon");
+        card.appendChild(crownIcon);
+      }
     }
-    if (rating != 0) {
-      card.appendChild(nameElement);
-      card.appendChild(ratingElement);
 
+    card.appendChild(ratingElement);
+    if (rating != 0) {
       restroomsContainer.appendChild(card);
     }
   });
