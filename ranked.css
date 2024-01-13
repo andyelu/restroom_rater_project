@@ -26,11 +26,11 @@ body {
   #toggleBtn {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0.35rem;
-    margin-left: 20rem;
+    margin-left: 29rem;
     color: black;
     text-align: center;
     border: 1px solid #d1d1d1;
-    background-color: #fbfbfb;
+    background-color: #a2c3cf5c;
   }
   img {
     width: 24px;

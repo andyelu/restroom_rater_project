@@ -87,18 +87,19 @@ const displayRankedRestrooms = () => {
     ratingElement.textContent = `${rating}`;
     if (rating == 0) {
       ratingElement.classList.add("no-rating");
-    }else if (rating > 0 && rating < 3) {
+    } else if (rating > 0 && rating < 3) {
       ratingElement.classList.add("low-rating");
     } else if (rating >= 3 && rating < 5) {
       ratingElement.classList.add("medium-rating");
     } else {
       ratingElement.classList.add("high-rating");
     }
+    if (rating != 0) {
+      card.appendChild(nameElement);
+      card.appendChild(ratingElement);
 
-    card.appendChild(nameElement);
-    card.appendChild(ratingElement);
-
-    restroomsContainer.appendChild(card);
+      restroomsContainer.appendChild(card);
+    }
   });
 };
 
