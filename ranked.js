@@ -22,7 +22,7 @@ const quicksort = (arr) => {
 };
 
 let sortedRestrooms = [];
-
+//a
 const sortByRatings = async () => {
   try {
     const response = await getRestrooms();
