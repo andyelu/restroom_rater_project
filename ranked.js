@@ -93,14 +93,13 @@ const displayRankedRestrooms = () => {
 
     if (rating == 0) {
       ratingElement.classList.add("no-rating");
-    } else if (rating > 0 && rating < 3) {
+    } else if (rating > 0 && rating <= 2) {
       ratingElement.classList.add("low-rating");
-    } else if (rating >= 3 && rating < 5) {
+    } else if (rating > 2 && rating <= 3) {
       ratingElement.classList.add("medium-rating");
     } else {
       ratingElement.classList.add("high-rating");
       if (restroom == highestRatedRestroom.restroom) {
-//Maybe change colors
         const crownIcon = document.createElement("img");
         crownIcon.src = "./icons/crown.png";
         crownIcon.alt = "Crown Icon";

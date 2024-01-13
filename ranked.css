@@ -61,6 +61,7 @@ body {
   width: 30rem;
   border-radius: 5px;
   background-color: #f9f9f9;
+  position: relative; 
 
   .crown-icon {
     width: 2rem;
@@ -71,13 +72,14 @@ body {
     display: block;
   }
 
-
   h2 {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     flex-direction: column;
+    padding-left: 5rem;
+    padding-right: 5rem;
     text-align: center;
   }
 
@@ -89,6 +91,7 @@ body {
     padding: 0.67rem;
     border-radius: 0.3rem;
     font-size: 28px;
+    margin-bottom: 1.5rem;
     margin-left: 0.625rem;
 
     width: 1.75rem;
@@ -97,5 +100,6 @@ body {
     align-items: center;
     justify-content: center;
     color: #fff;
+
   }
 }
