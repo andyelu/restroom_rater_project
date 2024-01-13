@@ -84,7 +84,16 @@ const displayRankedRestrooms = () => {
     nameElement.textContent = restroom.name;
 
     const ratingElement = document.createElement("p");
-    ratingElement.textContent = `Rating: ${rating}`;
+    ratingElement.textContent = `${rating}`;
+    if (rating == 0) {
+      ratingElement.classList.add("no-rating");
+    }else if (rating > 0 && rating < 3) {
+      ratingElement.classList.add("low-rating");
+    } else if (rating >= 3 && rating < 5) {
+      ratingElement.classList.add("medium-rating");
+    } else {
+      ratingElement.classList.add("high-rating");
+    }
 
     card.appendChild(nameElement);
     card.appendChild(ratingElement);
@@ -95,5 +104,5 @@ const displayRankedRestrooms = () => {
 
 (async () => {
   await sortByRatings();
-  console.log("Sorted Restrooms:", sortedRestrooms); 
+  console.log("Sorted Restrooms:", sortedRestrooms);
 })();

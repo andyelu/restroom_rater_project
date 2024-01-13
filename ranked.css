@@ -38,10 +38,54 @@ body {
   }
 }
 
+.no-rating {
+  background-color: #555555;
+}
+
+.low-rating {
+  background-color: #dc3545;
+}
+
+.medium-rating {
+  background-color: #ffc107;
+}
+
+.high-rating {
+  background-color: #28a745;
+}
+
 .restroom-card {
   border: 1px solid #ccc;
   padding: 10px;
-  margin: 10px;
+  margin: 10px auto;
+  width: 30rem;
   border-radius: 5px;
   background-color: #f9f9f9;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 3rem;
+    font-weight: bold;
+    box-shadow: 0 0 8px #d1d1d1;
+    transform: translateY(-50%);
+    padding: 0.67rem;
+    border-radius: 0.3rem;
+    font-size: 28px;
+    margin-left: 0.625rem;
+
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
 }
