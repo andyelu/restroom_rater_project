@@ -79,14 +79,14 @@ toggleBtn.onclick = async () => {
 const reviewCardsContainer = document.querySelector("[data-restroom-cards-container]");
 const reviewTemplate = document.querySelector("[data-restroom-template]");
 
-const displayRankedRestrooms = () => {
+const displayRankedRestrooms = async () => {
   const restroomsContainer = document.querySelector("[data-restroom-cards-container]");
 
   while (restroomsContainer.firstChild) {
     restroomsContainer.removeChild(restroomsContainer.firstChild);
   }
 
-  sortedRestrooms.forEach(async (restroomData) => {
+  for (const restroomData of sortedRestrooms) {
     const restroom = restroomData.restroom;
     const rating = restroomData.rating;
     const totalReviews = await getTotalRatings(restroom.name);
@@ -96,6 +96,7 @@ const displayRankedRestrooms = () => {
 
     const nameElement = document.createElement("h2");
     nameElement.textContent = restroom.name;
+    nameElement.classList.add("name");
 
     const ratingElement = document.createElement("p");
     ratingElement.textContent = `${rating}`;
@@ -103,7 +104,7 @@ const displayRankedRestrooms = () => {
 
     const totalElement = document.createElement("p");
     totalElement.textContent = `Total Reviews: ${totalReviews}`;
-    totalElement.classList.add("total-reviews"); 
+    totalElement.classList.add("total-reviews");
 
     card.appendChild(nameElement);
 
@@ -123,7 +124,7 @@ const displayRankedRestrooms = () => {
     if (rating != 0) {
       restroomsContainer.appendChild(card);
     }
-  });
+  }
 };
 
 (async () => {
