@@ -26,11 +26,11 @@ body {
   #toggleBtn {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0.35rem;
-    margin-left: 29rem;
+    margin-left: 24rem;
     color: black;
     text-align: center;
     border: 1px solid #d1d1d1;
-    background-color: #a2c3cf5c;
+    background-color: #8f5fff5a;
   }
   img {
     width: 24px;
@@ -58,19 +58,10 @@ body {
   border: 1px solid #ccc;
   padding: 10px;
   margin: 10px auto;
-  width: 30rem;
+  width: 25rem;
   border-radius: 5px;
   background-color: #f9f9f9;
   position: relative; 
-
-  .crown-icon {
-    width: 2rem;
-    height: 2rem;
-    margin-left: 1.2rem;
-    margin-right: auto;
-    margin-top: -2rem;
-    display: block;
-  }
 
   h2 {
     display: flex;
@@ -78,12 +69,12 @@ body {
     align-items: center;
     font-size: 1.5rem;
     flex-direction: column;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     text-align: center;
   }
 
-  p {
+  .rating {
     margin-top: 1.5rem;
     font-weight: bold;
     box-shadow: 0 0 8px #d1d1d1;
@@ -102,4 +93,9 @@ body {
     color: #fff;
 
   }
+}
+
+.total-reviews {
+  margin-left: 0.7rem;
+  font-size: 1rem;
 }

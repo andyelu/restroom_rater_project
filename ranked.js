@@ -8,6 +8,20 @@ const getRating = (name) => {
   return axios.get(`https://restroomrater.org/api/v1/reviews/rating/${name}`);
 };
 
+const getTotalRatings = (name) => {
+  return axios
+    .get(`https://restroomrater.org/api/v1/reviews/${name}`)
+    .then((response) => {
+      const jsonData = response.data;
+      const length = jsonData.length;
+      return length;
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      return 0;
+    });
+};
+
 const quicksort = (arr) => {
   if (arr.length <= 1) {
     return arr;
@@ -22,7 +36,7 @@ const quicksort = (arr) => {
 };
 
 let sortedRestrooms = [];
-//as
+
 const sortByRatings = async () => {
   try {
     const response = await getRestrooms();
@@ -57,11 +71,10 @@ toggleBtn.onclick = async () => {
 
     sortedRestrooms.reverse();
     displayRankedRestrooms();
-    console.log(sortedRestrooms);
   } catch (error) {
     console.error("Error:", error);
   }
-}; //d
+};
 
 const reviewCardsContainer = document.querySelector("[data-restroom-cards-container]");
 const reviewTemplate = document.querySelector("[data-restroom-template]");
@@ -73,12 +86,10 @@ const displayRankedRestrooms = () => {
     restroomsContainer.removeChild(restroomsContainer.firstChild);
   }
 
-  const highestRatedRestroom = sortedRestrooms[0];
-  console.log(highestRatedRestroom);
-
-  sortedRestrooms.forEach((restroomData) => {
+  sortedRestrooms.forEach(async (restroomData) => {
     const restroom = restroomData.restroom;
     const rating = restroomData.rating;
+    const totalReviews = await getTotalRatings(restroom.name);
 
     const card = document.createElement("div");
     card.classList.add("restroom-card");
@@ -88,6 +99,11 @@ const displayRankedRestrooms = () => {
 
     const ratingElement = document.createElement("p");
     ratingElement.textContent = `${rating}`;
+    ratingElement.classList.add("rating");
+
+    const totalElement = document.createElement("p");
+    totalElement.textContent = `Total Reviews: ${totalReviews}`;
+    totalElement.classList.add("total-reviews"); 
 
     card.appendChild(nameElement);
 
@@ -99,16 +115,11 @@ const displayRankedRestrooms = () => {
       ratingElement.classList.add("medium-rating");
     } else {
       ratingElement.classList.add("high-rating");
-      if (restroom == highestRatedRestroom.restroom) {
-        const crownIcon = document.createElement("img");
-        crownIcon.src = "./icons/crown.png";
-        crownIcon.alt = "Crown Icon";
-        crownIcon.classList.add("crown-icon");
-        card.appendChild(crownIcon);
-      }
     }
 
     card.appendChild(ratingElement);
+    card.appendChild(totalElement);
+
     if (rating != 0) {
       restroomsContainer.appendChild(card);
     }
